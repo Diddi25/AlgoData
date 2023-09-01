@@ -3,29 +3,54 @@ package se.kth.id1021.stack;
 public class Benchmark1000 {
 
     public static void main(String[] args) {
+        benchmark();
+    }
 
-        Item[] bigElementArray = new Item[1000];
+    private static void benchmark() {
 
-        for (int i = 0; i < 501; i++) {
+        int result = 0;
+
+        for(int i = 0; i < 1; i++) {
+
+            Item[] bigElementArray = buildExpression(20);
+
+            Calculator calculator = new Calculator(bigElementArray);
+
+            long t0 = System.nanoTime();
+
+            result = calculator.run();
+
+            long t1 = System.nanoTime();
+
+            System.out.println("resolution " + (t1 - t0)/1000 + " millisekunder");
+
+        }
+
+        System.out.println("Calculator: result = " + result);
+    }
+
+    private static Item[] buildExpression(int elements) {
+
+        Item[] bigElementArray = new Item[elements];
+
+        int upperLimit = (elements/2) + 1;
+
+        for (int i = 0; i < upperLimit; i++) {
             bigElementArray[i] = Item.Value(7);
         }
 
-        for (int i = 501; i < 1000; i++) {
+        for (int i = upperLimit; i < elements; i++) {
             bigElementArray[i] = Item.Add();
         }
 
-        long t0 = System.nanoTime();
-
-        Calculator calculator = new Calculator(bigElementArray);
-
-        int result = calculator.run();
-
-        System.out.println("Calculator: result = " + result);
-
-        long t1 = System.nanoTime();
-
-        System.out.println(" resolution " + (t1 - t0) + " nanoseconds");
-
+        return bigElementArray;
     }
 
 }
+
+/**
+ *762
+ * 769
+ * 849
+ *
+ */

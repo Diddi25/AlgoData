@@ -8,7 +8,7 @@ public class DynamicStack extends Stack {
     @Override
     public void push(int value) {
         if(dynamicStackPointer == dynamicStack.length - 1) {
-            copyItemsToNewStack(new int[dynamicStack.length + 5]);
+            copyItemsToNewStack(new int[dynamicStack.length * 2]);
         }
         dynamicStack[dynamicStackPointer] = value;
         dynamicStackPointer++;
@@ -26,8 +26,8 @@ public class DynamicStack extends Stack {
     }
 
     private void determineIfStackShouldShrink() {
-        if(dynamicStack.length - dynamicStackPointer >= 20) {
-            copyItemsToNewStack(new int[dynamicStack.length - 20]);
+        if(dynamicStack.length / 2 == dynamicStackPointer - 1) {
+            copyItemsToNewStack(new int[dynamicStack.length / 2]);
         }
         return;
     }
