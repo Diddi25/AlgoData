@@ -10,21 +10,17 @@ public class Benchmark1000 {
 
         int result = 0;
 
-        for(int i = 0; i < 1; i++) {
+        Item[] bigElementArray = buildExpression(20);
 
-            Item[] bigElementArray = buildExpression(20);
+        Calculator calculator = new Calculator(bigElementArray);
 
-            Calculator calculator = new Calculator(bigElementArray);
+        long t0 = System.nanoTime();
 
-            long t0 = System.nanoTime();
+        result = calculator.run();
 
-            result = calculator.run();
+        long t1 = System.nanoTime();
 
-            long t1 = System.nanoTime();
-
-            System.out.println("resolution " + (t1 - t0)/1000 + " millisekunder");
-
-        }
+        System.out.println("resolution " + (t1 - t0)/1000 + " millisekunder");
 
         System.out.println("Calculator: result = " + result);
     }
@@ -49,8 +45,8 @@ public class Benchmark1000 {
 }
 
 /**
- *762
- * 769
- * 849
+ *732
+ * 1316
+ * 996
  *
  */
