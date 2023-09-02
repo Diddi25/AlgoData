@@ -29,7 +29,6 @@ public class DynamicStack extends Stack {
         if(dynamicStackPointer < dynamicStack.length / 2) {
             copyItemsToNewStack(new int[dynamicStack.length / 2]);
         }
-        return;
     }
 
     private void copyItemsToNewStack(int[] newDynamicStack) {
