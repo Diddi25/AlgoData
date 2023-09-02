@@ -7,17 +7,12 @@ public class Benchmark1000 {
     }
 
     private static void benchmark() {
-
-        int result = 0;
-
+        int result;
         Item[] bigElementArray = buildExpression(5000);
-
         Calculator calculator = new Calculator(bigElementArray);
 
         long t0 = System.nanoTime();
-
         result = calculator.run();
-
         long t1 = System.nanoTime();
 
         System.out.println("resolution " + (t1 - t0)/1000 + " millisekunder");
