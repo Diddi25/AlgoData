@@ -2,7 +2,7 @@ package se.kth.id1021.stack;
 
 public class StaticStack extends Stack {
 
-    private final int[] staticStack = new int[1024];
+    private final int[] staticStack = new int[5024];
     private int staticStackPointer = 0;
 
     @Override

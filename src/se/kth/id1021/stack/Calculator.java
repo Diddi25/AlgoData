@@ -9,7 +9,7 @@ public class Calculator {
     public Calculator(Item[] expression) {
         this.expression = expression;
         this.instructionPointer = 0;
-        this.stack = new StaticStack(); //Kan ändras till DynamicStack()
+        this.stack = new DynamicStack(); //Kan ändras till DynamicStack()
     }
 
     public int run() {

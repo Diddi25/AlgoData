@@ -22,7 +22,15 @@ public class Main {
 
         long t1 = System.nanoTime();
 
-        System.out.println(" resolution " + (t1 - t0) + " nanoseconds");
+        System.out.println(" resolution " + (t1 - t0)/100000 + " milliseconds");
     }
 
+    /**
+     * 13,7 s
+     * 16,6 s
+     * 13,5
+     * 13,8
+     * 14,2
+     * == medel 14,3
+     */
 }

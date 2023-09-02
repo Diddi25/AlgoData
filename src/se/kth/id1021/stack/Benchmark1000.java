@@ -10,7 +10,7 @@ public class Benchmark1000 {
 
         int result = 0;
 
-        Item[] bigElementArray = buildExpression(20);
+        Item[] bigElementArray = buildExpression(5);
 
         Calculator calculator = new Calculator(bigElementArray);
 
@@ -44,9 +44,3 @@ public class Benchmark1000 {
 
 }
 
-/**
- *732
- * 1316
- * 996
- *
- */

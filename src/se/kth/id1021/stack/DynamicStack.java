@@ -26,15 +26,16 @@ public class DynamicStack extends Stack {
     }
 
     private void determineIfStackShouldShrink() {
-        if(dynamicStack.length / 2 == dynamicStackPointer - 1) {
+        if(dynamicStack.length / 2 > dynamicStackPointer - 1) {
             copyItemsToNewStack(new int[dynamicStack.length / 2]);
         }
         return;
     }
 
     private void copyItemsToNewStack(int[] newDynamicStack) {
-        if (dynamicStackPointer >= 0)
-            System.arraycopy(dynamicStack, 0, newDynamicStack, 0, dynamicStackPointer);
+        for(int i = 0; i < dynamicStackPointer; i++) {
+            newDynamicStack[i] = dynamicStack[i];
+        }
         dynamicStack = newDynamicStack;
     }
 }
