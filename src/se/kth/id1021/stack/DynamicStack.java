@@ -26,7 +26,7 @@ public class DynamicStack extends Stack {
     }
 
     private void determineIfStackShouldShrink() {
-        if(dynamicStack.length / 2 > dynamicStackPointer - 1) {
+        if(dynamicStackPointer < dynamicStack.length / 2) {
             copyItemsToNewStack(new int[dynamicStack.length / 2]);
         }
         return;
